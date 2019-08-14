@@ -1,0 +1,501 @@
+[janis@janis-pc ~]$ history
+    7  ls -al ~/.ssh
+    8  cd ~
+    9  ls -a
+   10  cd .ssh/
+   11  ls
+   12  ls -a
+   13  more known_hosts 
+   14  cd ..
+   15  rm -r .ssh/
+   16  more /.ssh
+   17  ls /.ssh
+   18  ls -al ~/.ssh
+   19  ssh-keygen -t rsa -b 4096 -C "janis.schanbacher@posteo.de"
+   20  ls -al ~/.ssh
+   21  more .ssh/id_rsa.pub 
+   22  cd /dotfiles/
+   23  git status
+   24  git log
+   25  git push -u origin master
+   26  sudo git push -u origin master
+   27  sudo ls /root/.ssh
+   28  sudo ls -a /root/.ssh
+   29  ls ~/.ssh
+   30  vim Documents/documentation.txt 
+   31  who
+   32  more /etc/passwd
+   33  usermod -c "Janis Schanbacher" janis-work 
+   34  sudo usermod -c "Janis Schanbacher" janis-work 
+   35  more /etc/passwd
+   36  vim Documents/documentation.txt 
+   37  groups janis-work 
+   38  groups janis
+   39  id janis
+   40  id janis-work 
+   41  cat /etc/group
+   42  groups
+   43  groups janis-work 
+   44  groups root
+   45  groups su
+   46  groups janis-work 
+   47  groups janis-work 
+   48  groups janis
+   49  vifm
+   50  man usermod
+   51  man gpasswd
+   52  gpasswd -A -h
+   53  gpasswd -h
+   54  gpasswd -help
+   55  groups
+   56  gpasswd -a janis-work sys
+   57  sudo gpasswd -a janis-work sys
+   58  sudo gpasswd -a janis-work network 
+   59  sudo gpasswd -a janis-work power 
+   60  sudo gpasswd -a janis-work lp 
+   61  sudo gpasswd -a janis-work wheel 
+   62  ls
+   63  cd /
+   64  ls
+   65  sudo groupadd shared
+   66  groups
+   67  sudo gpasswd -a janis shared 
+   68  groups
+   69  more /etc/passwd
+   70  groups janis
+   71  sudo gpasswd -a janis-work shared 
+   72  mkdir /shared
+   73  sudo mkdir /shared
+   74  ls
+   75  man chown
+   76  man chown
+   77  sudo chown -R :shared /shared
+   78  sudo chmod -R 770 /sharde
+   79  man chown
+   80  ls
+   81  cd shared/
+   82  cd shared/
+   83  sudo cd shared/
+   84  cd shared/
+   85  cd /shared/
+   86  sudo shutdown -r
+   87  sudo shutdown new -r
+   88  sudo shutdown new now -r
+   89  sudo shutdown now -r
+   90  more Documents/documentation.txt 
+   91  vim test
+   92  more /shared/dotfiles/vim/.vimrc_bkp 
+   93  cd /shared/
+   94  cd ..
+   95  cd /shared/
+   96  chmod 775 test.txt 
+   97  ls -l
+   98  cd ..
+   99  ls -l
+  100  cd shared/
+  101  touch test2.txt
+  102  ls -l
+  103  cd ..
+  104  sudo chmod -R 1775 /shared/
+  105  ls -l
+  106  cd shared/
+  107  touch test3.txt
+  108  ls -l
+  109  cd ..
+  110  sudo chmod 2770 /shared/
+  111  cd shared/
+  112  ls -a
+  113  ls -l
+  114  touch test4.txt
+  115  ls -l
+  116  rm *
+  117  ls -l
+  118  cd ..
+  119  ls -l
+  120  sudo chmod 2775 /shared/
+  121  ls -l
+  122  sudo chmod -R 2775 /shared
+  123  ls -l
+  124  cd shared/
+  125  ls -l
+  126  touch test.txt
+  127  ls -l
+  128  touch test
+  129  ls -l
+  130  cd ..
+  131  ls
+  132  sudo chmod 2775 /shared
+  133  ls -l
+  134  groups
+  135  cd shared/
+  136  vim test.txt
+  137  ls -l
+  138  vim test2.txt
+  139  ls -l
+  140  ls -l
+  141  vim test2.txt 
+  142  cd ..
+  143  sudo chmod g+s shared/
+  144  ls -l
+  145  cd shared/
+  146  ls -l
+  147  touch test4.txt
+  148  ls -l
+  149  mkdir dir
+  150  ls -l
+  151  man chown
+  152  man chmod
+  153  info '(coreutils) chmod invocation'
+  154  ls -l
+  155  mkdir dir2
+  156  ls -l
+  157  ls -l ../
+  158  cd ..
+  159  chmod -R u=srwx,g=srwx,o=rx shared
+  160  sudo chmod -R u=srwx,g=srwx,o=rx shared
+  161  ls -l
+  162  cd shared/
+  163  ls -l
+  164  touch test5.txt
+  165  ls -l
+  166  rm *
+  167  mkdir dir3
+  168  ls -l
+  169  cd dir3
+  170  mkdir dir
+  171  ls -l
+  172  cd ../..
+  173  ls
+  174  sudo chmod u=srwx,g=srwx,o=rx -R shared
+  175  ls -l
+  176  cd shared/
+  177  ls -l
+  178  touch test1.txt
+  179  ls -l
+  180  mkdir dir4
+  181  ls -l
+  182  cd ..
+  183  sudo chmod 775 -R shared/
+  184  ls -l
+  185  cd shared/
+  186  ls -l
+  187  mkdir dir5
+  188  ls -l
+  189  toush k.txt
+  190  touch k.txt
+  191  ls -l
+  192  cd ..
+  193  ll
+  194  umask
+  195  cd shared/
+  196  umask
+  197  umask -S
+  198  umask 0002
+  199  umask
+  200  s -l
+  201  ls -l
+  202  rm *
+  203  rm -R *
+  204  touch test.txt
+  205  touch dir
+  206  ls -l
+  207  cd ..
+  208  ls -l
+  209  man chmod
+  210  sudo chmod 2775 -R shared/
+  211  ls -l
+  212  cd shared/
+  213  ls -l
+  214  mkdir dir1
+  215  ls -l
+  216  touch test1.txt
+  217  ls -l
+  218  rm -R *
+  219  vim test.txt
+  220  mkdir dir
+  221  ls -l
+  222  umask
+  223  mkdir dir/dir
+  224  cd dir/
+  225  ls -l
+  226  touch test.txt
+  227  ls -l
+  228  cd ..
+  229  man chmod
+  230  cd ..
+  231  sudo chmod 0775 -R shared/
+  232  cd shared/
+  233  ls -l
+  234  mkdir dir2
+  235  ls -l
+  236  touch test2.txt
+  237  ls -l
+  238  vim test3.txt
+  239  ls -l
+  240  cd ..
+  241  sudo chmod 2775 -R shared/
+  242  ls -l
+  243  setfacl --set u::rwx,g::rwx,o::r-x shared/
+  244  setfacl -d --set u::rwx,g::rwx,o::r-x shared/
+  245  sudo setfacl -d --set u::rwx,g::rwx,o::r-x shared/
+  246  getfacl shared/
+  247  cd shared/
+  248  ls -a
+  249  ls -l
+  250  rm -R *
+  251  touch test.txt
+  252  mkdir dir
+  253  ls -l
+  254  touch test2
+  255  ls -l
+  256  getfacl test2 
+  257  umask
+  258  ls -l
+  259  cd ..
+  260  setfacl -d -R --set u::rwx,g::rwx,o::r-x shared/
+  261  setfacl -R --set u::rwx,g::rwx,o::r-x shared/
+  262  ls -l
+  263  cd shared/
+  264  ls -l
+  265  getfacl dir
+  266  getfacl test2 
+  267  touch test2.txt
+  268  ls -l
+  269  umask 
+  270  umsk 0000
+  271  umask 0000
+  272  umask
+  273  touch test3
+  274  ls -l
+  275  umask 0002
+  276  getfacl test3 
+  277  cd ..
+  278  ls
+  279  setfacl -d  --set-file u::rwx,g::rwx,o::r-x shared/
+  280  setfacl -d -m group:shared:rwx shared
+  281  sudo setfacl -d -m group:shared:rwx shared
+  282  ls -l
+  283  cd shared/
+  284  touch test5.txt
+  285  ls -l
+  286  mkdir dir2
+  287  ls -l
+  288  cd ..
+  289  chmod g+s shared/
+  290  sudo chmod g+s shared/
+  291  ls -l
+  292  cd shared/
+  293  touch g.txt
+  294  ls -l
+  295  mkdir df.txt
+  296  ls -l
+  297  rm -R *
+  298  cd ..
+  299  sudo chmod 2775 -R shared
+  300  ls -l
+  301  cd shared/
+  302  touch test
+  303  mkdir dir
+  304  ls -l
+  305  getfacl test 
+  306  getfacl dir/
+  307  cd ..
+  308  setfacl -d -R --set u::rwx,g::rwx,o::r-x shared
+  309  sudo setfacl -d -R --set u::rwx,g::rwx,o::r-x shared
+  310  ls -l shared/
+  311  touch shared//test2.txt
+  312  ls -l shared/
+  313  mkdir shared/dir2
+  314  ls -l shared/
+  315  touch shared/test2
+  316  ls -l shared/
+  317  getfacl shared/
+  318  getfacl shared/dir2
+  319  sudo setfacl -d -m group:shared:rwx shared
+  320  ls -l
+  321  getfacl shared/
+  322  sudo chmod 2775 -R shared
+  323  getfacl shared/
+  324  sudo setfacl -d -R --set u::rwx,g::rwx,o::r-x shared
+  325  sudo setfacl -R --set u::rwx,g::rwx,o::r-x shared
+  326  getfacl shared/
+  327  getfacl shared/
+  328  getfacl -d
+  329  getfacl -d .
+  330  getfacl -d . | setfacl -R --set shared/
+  331  sudo mv shared/ shared_bkp
+  332  mkdir shared
+  333  sudo mkdir shared
+  334  sudo chown -R :shared /shared
+  335  sudo chmod 2775 -R shared
+  336  getfacl shared
+  337  sudo setfacl -d -R --set u::rwx,g::rwx,o::r-x shared
+  338  getfacl shared
+  339  mkdir shared/dir
+  340  ls -l shared
+  341  touch shared/test.txt
+  342  ls -l shared
+  343  getfacl shared/test.txt 
+  344  getfacl shared
+  345  rm -R shared_bkp/
+  346  sudo rm -R shared_bkp/
+  347  ls
+  348  mv dotfiles shared/dotfiles
+  349  sudo mv dotfiles/ shared/dotfiles
+  350  ls 
+  351  cd shared/
+  352  cd dotfiles/
+  353  git status
+  354  git log
+  355  ln -s /shared/dotfiles/vim/.vimrc ~/.vimrc
+  356  ln -sf /shared/dotfiles/vim/.vimrc ~/.vimrc
+  357  more /shared/dotfiles/vim/.vimrc 
+  358  vim vim/.vimrc 
+  359  getfacl vim/.vimrc 
+  360  cd ../..
+  361  ls
+  362  sudo setfacl -d -R --set u::rwx,g::rwx,o::r-x shared
+  363  sudo chmod 2775 -R shared
+  364  cd /shared/dotfiles/
+  365  vim vim/.vimrc 
+  366  getfacl vim/.vimrc 
+  367  ls -l
+  368  cd vim/
+  369  ls -l
+  370  ls
+  371  git status
+  372  ls -al
+  373  mv .vimrc-bkp
+  374  mv .vimrc .vimrc-bkp
+  375  sudo .vimrc .vimrc_bkp
+  376  sudo mv .vimrc .vimrc_bkp
+  377  vim .vimrc
+  378  chmod 2775 .vimrc
+  379  sudo vim .vimrc
+  380  vim .vimrc
+  381  vim test.txt
+  382  ls
+  383  ls -la
+  384  chmod 775 .vimrc
+  385  sudo chmod 775 .vimrc
+  386  vim .vimrc
+  387  git status
+  388  git diff
+  389  ls
+  390  vim .vimrc
+  391  sudo vim .vimrc
+  392  sudo vim .vimrc
+  393  vim .vimrc
+  394  cd /shared/
+  395  vim test.txt
+  396  vim test.txt
+  397  vim ~/Documents/documentation.txt 
+  398  vim ~/Documents/documentation.txt 
+  399  cd ../usr/
+  400  ls
+  401  cd ..
+  402  ls
+  403  cd home/
+  404  ls
+  405  mkdir shared
+  406  cd ..
+  407  ls
+  408  ls -l
+  409  cd shared/
+  410  ls -l
+  411  touch test2.txt
+  412  ls -l
+  413  vim test2.txt
+  414  vim ~/Documents/documentation.txt 
+  415  vim moviepilotSetup.txt
+  416  sudo vim moviepilotSetup.txt
+  417  sudo more moviepilotSetup.txt
+  418  sudo vim moviepilotSetup.txt
+  419  more Documents/documentation.txt 
+  420  yarn -v
+  421  mysql -v
+  422  yay -R mysql
+  423  yay -R mysql
+  424  yay -S mysql
+  425  mysql_secure_installation 
+  426  cd /run/mysqld/
+  427  ls
+  428  mysql_secure_installation 
+  429  mysql -v
+  430  sudo mysql -v
+  431  ls
+  432  path
+  433  pwd
+  434  cd /var/lib/mysql/
+  435  cd /var/lib
+  436  sudo cd mysql/
+  437  ls
+  438  sudo ls mysql/
+  439  sudo rm mysql/*
+  440  sudo rm -R mysql/*
+  441  sudo rm -r mysql/*
+  442  sudo ls mysql/
+  443  sudo mv mysql/ mysql_bkp
+  444  ls -la
+  445  mysql_secure_installation 
+  446  sudo mysql_secure_installation 
+  447  ls
+  448  mysql_secure_installation 
+  449  sudo mysql_secure_installation 
+  450  which mysql
+  451  sudo systemctl start mysqld
+  452  "systemctl status mariadb.service
+  453  systemctl status mariadb.service
+  454  sudo systemctl restart mariadb.service 
+  455  journalctl -xe
+  456  journalctl -xe
+  457  sudo systemctl restart mariadb.service 
+  458  sudo rm -R /var/lib/mysql/*
+  459  yay -R mysql
+  460  mv mysql_bkp/ mysql
+  461  sudo mv mysql_bkp/ mysql
+  462  yay -R mysql/
+  463  yay -S mysql/
+  464  yay -R mysql
+  465  yay -h 
+  466  pacman -Q
+  467  yay -Q
+  468  yay -R mariadb
+  469  yay -R mariadb-clients 
+  470  yay -R mariadb-libs 
+  471  yay -Q
+  472  mysql -v
+  473  yay -S mysql
+  474  sudo mv /var/lib/mysql/ /var/lib/mysql_bkp
+  475  mysql -v
+  476  yay -S mysql
+  477  mysql -v
+  478  yay -R mariadb-libs 
+  479  yay -R mariadb-clients 
+  480  yay -R mariadb
+  481  yay -R mysql
+  482  ls /var/lib/ | grep mysql
+  483  sudo rm -R /var/lib/mysql
+  484  yay -Q
+  485  which mysql
+  486  systemctl enable mysqld.service
+  487  yay -S mysql
+  488  mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+  489  sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+  490  mysql_secure_installation 
+  491  mysql -v
+  492  systemctl enable mysqld.service
+  493  mysql -v
+  494  mariadb -v
+  495  sudo systemctl enable mariadb
+  496  sudo systemctl start mariadb
+  497  mysql -v
+  498  mysql_secure_installation 
+  499  sudo mysql_secure_installation 
+  500  mysql -v
+  501  sudo pacman -Sy redis
+  502  which redis
+  503  redis -v
+  504  redis -v
+  505  which redis
+  506  history
