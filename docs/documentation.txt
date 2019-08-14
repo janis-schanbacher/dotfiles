@@ -1,0 +1,57 @@
+## user management
+# https://wiki.archlinux.org/index.php/Users_and_groups
+# List all users
+  cat /etc/passwd
+# Add user with default home directory, bash login shell, named janis-work
+  useradd -m -s /bin/bash janis-work
+# set password
+  passwd janis-work
+# set full name
+  sudo usermod -c "Janis Schanbacher" janis-work
+# Add user to groups
+  # Right to administer printers in CUPS.
+    sudo gpasswd -a janis-work sys
+  # Unused by default. Can be used e.g. for granting access to NetworkManager
+    sudo gpasswd -a janis-work network
+  #
+    sudo gpasswd -a janis-work power
+  # Access to parallel port devices (printers and others).
+    sudo gpasswd -a janis-work lp
+  # Administration group, commonly used to give privileges to perform administrative actions. Can be used to give access to the sudo and su utilities (neither uses it by default, configurable in /etc/pam.d/su and /etc/pam.d/su-l). It also has full read access to journal files.
+    sudo gpasswd -a janis-work wheel
+  # Reboot
+    sudo shutdown now: -r
+
+# Create a shared directory
+  # Create a group
+     sudo groupadd shared
+  # Add users to the group to grant them access
+    sudo gpasswd -a janis shared
+    sudo gpasswd -a janis-work shared
+  # Create the directory (/home/shared is also common)
+     sudo mkdir /shared
+  # Change (only) the group of the files in /shared (same as if chgrp is used)
+    sudo chown -R :shared /shared
+  # Grant owner and groups (shared) rwx permissions to /shared
+    sudo chmod -R 770 /shared
+
+
+
+
+# create symlink
+ln -s /path/to/file /path/to/symlink
+# create or update symlink
+ln -sf /path/to/file /path/to/symlink
+
+
+# Set up ssh keychain
+	# Install keychain
+		pacman -S keychain
+	# Add ssh-key(s) to keychain: append the to ~/.bash_profile
+	keychain --clear --eval --quiet --agents ssh ~/.ssh/id_rsa
+
+# Clone git repositories
+	git clone git@github.com:moviepilot-de/moviepilot-next.git
+	git clone git@github.com:moviepilot-de/moviepilot.de.git
+
+

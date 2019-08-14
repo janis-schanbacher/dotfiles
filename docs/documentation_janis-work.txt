@@ -1,0 +1,23 @@
+# Install yay package manager for AUR (Arch User Repository)
+	cd ~/temp
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+	cd ~
+
+# Load Database
+	# copy .ssh folder from mac
+	# get zertifikate folder
+	scp moviepilot@mp-db6.infrastructr.net:exports/moviepilot.sql.gz ~/Downloads
+
+
+
+
+
+## General
+	ln -s /shared/dotfiles/bash/.bashrc .bashrc
+
+
+Bios update um rausch problem zu behebnen
+
+auf n2iuj12w.exe waere die windows installer version.:
