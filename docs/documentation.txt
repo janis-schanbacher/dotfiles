@@ -55,3 +55,59 @@ ln -sf /path/to/file /path/to/symlink
 	git clone git@github.com:moviepilot-de/moviepilot.de.git
 
 
+
+### Fresh start ###
+
+# Update and load packages
+  sudo pacman -Syu
+
+# Set up ssh
+  # on mac do $ zip -er ~/Desktop/ssh.zip ~/.ssh
+  # to create an encrypted zip and send it
+  # unzip
+    sudo pacman -S unzip
+    unzip .ssh.zip
+    # copy folder .ssh to ~/.ssh
+    # open ~/.ssh/config and remove the following line
+      UseKeychain yes
+  # install keychain
+     yay -Sy keychain
+  # add ssh key to keychain by appending the following line to ~/.bash_profile
+     eval `keychain --clear --eval --quiet --agents ssh ~/.ssh/id_rsa`
+
+# Add symlinks to my dotfiles and save the originals
+  mv .bashrc .bashrc_default
+  mv .bash_profile .bash_profile_default
+  ln -s dotfiles/bash/.bashrc ~/.bashrc
+  ln -s dotfiles/bash/.bash_profile ~/.bash_profile
+  ln -s dotfiles/vim/.vimrc ~/.vimrc
+
+# Install mySQL
+yay -S mysql
+sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+systemctl enable mysqld.service
+sudo systemctl enable mariadb
+sudo systemctl start mariadb
+sudo mysql_secure_installation
+
+# Load Database
+	# Set up ssh first
+	# get zertifikate folder
+	scp moviepilot@mp-db6.infrastructr.net:exports/moviepilot.sql.gz ~/Downloads
+  # TODO: damit was machen..
+  # TODO: Zertifikate Ordner entschlüsseln und verwenden
+
+
+# Clone moviepilot git repositories
+  mkdir ~/Projects
+  cd ~/Projects
+	git clone git@github.com:moviepilot-de/moviepilot-next.git
+	git clone git@github.com:moviepilot-de/moviepilot.de.git
+
+
+# Setup weekly snapshots
+  # Install timeshift
+    sudo pacman -S --noconfirm timeshift
+  # Run timeshift and use gui to set up weekly backups
+     sudo timeshift-gtk
+
