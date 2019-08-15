@@ -83,12 +83,12 @@ ln -sf /path/to/file /path/to/symlink
   ln -s dotfiles/vim/.vimrc ~/.vimrc
 
 # Install mySQL
-yay -S mysql
-sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
-systemctl enable mysqld.service
-sudo systemctl enable mariadb
-sudo systemctl start mariadb
-sudo mysql_secure_installation
+  yay -S mysql
+  sudo mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+  systemctl enable mysqld.service
+  sudo systemctl enable mariadb
+  sudo systemctl start mariadb
+  sudo mysql_secure_installation
 
 # Load Database
 	# Set up ssh first
@@ -110,4 +110,104 @@ sudo mysql_secure_installation
     sudo pacman -S --noconfirm timeshift
   # Run timeshift and use gui to set up weekly backups
      sudo timeshift-gtk
+
+sudo pacman -S redis # TODO not found with which or -v
+yay -S yarn
+yay -S jre8 # was already installed
+yay -S ruby-rails
+  # Solve MissingSpecVersionErrors
+  gem install activesupport
+  gem install rails-dom-testing
+  gem install erubi
+  gem install method_source
+
+# Install rvm
+  curl -L get.rvm.io > rvm-install
+  bash < ./rvm-install
+  source $HOME/.bashrc
+  source /home/janis/.rvm/scripts/rvm
+
+# nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
+
+# pushionpassenger and nginx (https://www.phusionpassenger.com/library/install/nginx/install/oss/tarball/)
+  # uninstall nginx (optional)
+    sudo rm -rf /etc/nginx
+  # download and extract tarball
+     sudo tar -xzvf Downloads/passenger-6.0.2.tar.gz -C /opt
+  # Set path in /etc/bash.bashrc
+     PATH=/somewhere-permanent/passenger-X.X.X/bin:$PATH
+     export PATH
+  # open new terminal or run source
+  # follow instructions in installer
+    sudo passenger-install-nginx-module
+  # Validate install
+      sudo passenger-config validate-install
+
+  # start nginx
+    sudo /opt/nginx/sbin/nginx
+  # shut down nginx
+    sudo kill $(cat /opt/nginx/logs/nginx.pid)
+
+# elastic search and npm
+  sudo pacman -S elasticsearch
+  cd ~/Downloads # TODO: kann ich dass verzeichnis jetzt löschen oder hätte ich es woanders hin clonen sollen? Installer hat als tip gegeben das package.lock zu committen
+  git clone git://github.com/mobz/elasticsearch-head.git
+  cd elasticsearch-head
+  sudo pacman -Sy npm
+  npm i
+  npm audit fix
+
+
+# Set up Project
+  cd ~/Projects/moviepilot.de
+  git submodule init
+  git submodule update
+
+  rvm install ruby-2.4.1; rvm use ruby-2.4.1
+    # TODO: check if change terminal to login shell is necessary. ruby -v gibt 2.4.1 zurück
+    # Install of ruby-2.4.1 - #complete
+    # Please be aware that you just installed a ruby that requires 1 patches just to be compiled on an up to date linux system.
+    # This may have known and unaccounted for security vulnerabilities.
+    # Please consider upgrading to ruby-2.6.3 which will have all of the latest security patches.
+    # Ruby was built without documentation, to build it run: rvm docs generate-ri
+
+    # RVM is not a function, selecting rubies with 'rvm use ...' will not work.
+
+    # You need to change your terminal emulator preferences to allow login shell.
+    # Sometimes it is required to use `/bin/bash --login` as the command.
+    # Please visit https://rvm.io/integration/gnome-terminal/ for an example.
+
+  # install dependencies
+    gem install bundler
+    bundle
+    nvm install; nvm use
+    yarn install
+  # create configurations
+    cat config/templates/database.yml.sample > config/database.yml
+    cat config/templates/resque.yml.sample > config/resque.yml
+    cat config/templates/memcached.yml.sample > config/memcached.yml
+    cat config/templates/elasticsearch.yml.sample > config/elasticsearch.yml
+
+  # TODO: Steps for sql/database creation, Elasticsearch, nginx überprüfen was davon noch zu tun ist
+
+
+
+
+
+
+  ### Vim ###
+
+  # apply changes not manually with source, bin in vim:
+    :so $MYVIMRC
+
+
+# TODO  :PluginInstall gibt folgenden fehleroutput
+  Error detected while processing function vundle#installer#new[9]..vundle#config#bundle[2]..<SNR>7_check
+  _bundle_name:
+  line    2:
+  Vundle error: Name collision for Plugin . Plugin  previously used the name "". Skipping Plugin .
+  Error detected while processing function vundle#installer#new:
+  line   17:
+  E121: Undefined variable: name_spec
 
