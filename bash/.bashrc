@@ -55,3 +55,63 @@ export PATH="$PATH:$HOME/.rvm/bin"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#
+# # ex - archive extractor
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+alias nginxStart='sudo /opt/nginx/sbin/nginx'
+alias nginxStop='sudo kill $(cat /opt/nginx/logs/nginx.pid)'
+alias nginxRestart='nginxStop && nginxStart'
+alias nginxStatus='ps auxw | grep nginx && sudo passenger-memory-stats'
+
+alias elasticsearch='/home/janis/perm/elasticsearch-2.4.6/bin/elasticsearch'
+
+
+alias mp='cd ~/Projects/moviepilot.de'
+alias mn='cd ~/Projects/moviepilot-next'
+
+# Needs to be run several times some times
+function bootMP {
+  nginxStart
+  nginxStatus
+  elasticsearch &
+  redis-server &
+}
+
+function bootNext {
+  bootMP
+  cd /home/janis/Code/moviepilot-next
+  yarn dev
+}
+
+# monitor alignment, in order t not use arandr graphical...
+# TODO: replace output monitor
+#function displayLeftsideExternal {
+#  xrandr --output eDP1 --auto --output DP-1-3 --auto --left-of eDP-1-1
+
+#  if [ -f ~/Dotfiles/polybar/launch.sh ]; then
+#      sh ~/Dotfiles/polybar/launch.sh
+#  fi
+#}

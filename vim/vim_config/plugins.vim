@@ -9,6 +9,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'styled-components/vim-styled-components'
 
+Plugin 'scrooloose/nerdcommenter'
+
 call vundle#end()            " required
 filetype plugin indent on    " required
-filetype plugin on
