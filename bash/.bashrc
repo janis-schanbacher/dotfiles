@@ -92,6 +92,8 @@ alias elasticsearch='/home/janis/perm/elasticsearch-2.4.6/bin/elasticsearch'
 alias mp='cd ~/Projects/moviepilot.de'
 alias mn='cd ~/Projects/moviepilot-next'
 
+alias ll='ls -la'
+
 # Needs to be run several times some times
 function bootMP {
   nginxStart
