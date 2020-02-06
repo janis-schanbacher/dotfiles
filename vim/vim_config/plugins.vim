@@ -11,5 +11,7 @@ Plug 'styled-components/vim-styled-components'
 
 Plug 'preservim/nerdcommenter'
 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 call plug#end() " required
 filetype plugin indent on " required
