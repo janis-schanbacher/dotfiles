@@ -6,6 +6,7 @@ set number relativenumber
 set shell=bash
 set mouse=a
 set clipboard=unnamedplus
+set backspace=indent,eol,start
 
 " Disable automatic commenting on newline
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
