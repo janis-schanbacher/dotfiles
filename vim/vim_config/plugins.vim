@@ -1,15 +1,15 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Download plug.vim and put it in ~/.vim/autoload
+"   curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+"   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+call plug#begin('~/.vim/plugged')
 
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'styled-components/vim-styled-components'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'styled-components/vim-styled-components'
 
-Plugin 'scrooloose/nerdcommenter'
+Plug 'preservim/nerdcommenter'
 
-call vundle#end()            " required
-filetype plugin indent on    " required
+call plug#end() " required
+filetype plugin indent on " required
