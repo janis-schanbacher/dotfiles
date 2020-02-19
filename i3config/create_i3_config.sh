@@ -9,10 +9,10 @@ srcfiles=(
 # header
 set-modkey
 # focus_wrapping
-# font
+font
 i3-gaps
 i3-colors
-polybar
+#polybar
 compton
 # background-image
 keybindings
