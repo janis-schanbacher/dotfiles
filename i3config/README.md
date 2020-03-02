@@ -1,10 +1,11 @@
 # i3 configuration
 
-packages used:
+## packages used:
 
 * i3-gaps
 * polybar
 * compton
 * xdotool
 
+## installation
 sudo ln -s ~/dotfiles/i3config/create_i3_config.sh /usr/local/bin/create_i3_config.sh`
