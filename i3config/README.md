@@ -8,4 +8,6 @@
 * xdotool
 
 ## installation
-sudo ln -s ~/dotfiles/i3config/create_i3_config.sh /usr/local/bin/create_i3_config.sh`
+```
+sudo ln -s ~/dotfiles/i3config/create_i3_config.sh /usr/local/bin/create_i3_config.sh
+```
