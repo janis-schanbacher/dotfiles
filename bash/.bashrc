@@ -117,3 +117,5 @@ function bootNext {
 #      sh ~/Dotfiles/polybar/launch.sh
 #  fi
 #}
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

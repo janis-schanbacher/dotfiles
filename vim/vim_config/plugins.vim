@@ -17,6 +17,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'styled-components/vim-styled-components'
+Plug 'dense-analysis/ale'
 
 Plug 'preservim/nerdcommenter'
 

@@ -9,7 +9,9 @@ set clipboard=unnamedplus
 set backspace=indent,eol,start
 
 " Disable automatic commenting on newline
-	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " Automatically delete all trailing whitespace on save.
-	autocmd BufWritePre * %s/\s\+$//e
+autocmd BufWritePre * %s/\s\+$//e
+
+autocmd ColorScheme * hi Normal ctermbg=NONE
