@@ -1,6 +1,40 @@
-add vim to ignored packages:
+# add vim to ignored packages:
 sudo vim /etc/pacman.conf
 IgnorePkg   = vim-runtime
 
+# Add i3 window manager to xfce
+( https://forum.manjaro.org/t/how-to-combine-xfce-desktop-enviroment-and-i3wm/111364 )
+  sudo pacman -S nitrogen
+  Open nitrogen, choose directory: /usr/share/backgrounds
+  sudo pacman -S i3
+  source ~/dotfiles/i3config/create_i3_config.sh
+  ln -s ~/dotfiles/i3config/i3.config ~/.config/i3/config
+  yay -S xfce4-i3-workspaces-plugin-git
+  Remove all xfce keybindings in settings>Keyboard>shortcuts
+  sudo pacman -Rc xfdesktop
+  xfconf-query -c xfce4-session -p /sessions/Failsafe/Client0_Command -t string -sa i3
+  # reboot
 
+
+# Panel Preferences
+  Display:
+    Row Size: 26px
+  Appearance:
+    Fixed icon size 24px
+  Items:
+    Whisker Menu
+    Weather Update
+    Separator
+    System Load Monitor
+    Disk Performance Monitor
+    Sensor Plugin
+    Separator
+    Workspace Switcher
+    Window Menu
+    Separator
+    Notification Area
+    PulseAudio Plugin
+    Clock
+    Separator
+    Action Buttons
 
