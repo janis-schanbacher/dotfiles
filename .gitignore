@@ -1,0 +1,8 @@
+*.swp
+*.swo
+*/.git
+
+fonts/.uuid
+
+git/user.gitconfig
+i3config/i3.config

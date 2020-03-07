@@ -5,6 +5,11 @@ echo "#   Janis's Manjaro Setup    #"
 echo '#                            #'
 echo '##############################'
 
+echo 'Select actions by entering y'
+
+echo 'Run preScript? (update, git-, ssh-setup)'
+read do_preScript
+
 sudo ufw enable
 echo ''
 echo 'Uncomplicated Firewall activated'
@@ -61,69 +66,73 @@ read do_vimium
 
 echo 'All clear!'
 
-if [ ! -d ~/dotfiles ]; then
-	if [[ $do_symlinks == y* ]]; then
+if [[ $do_preScript == y* ]]; then
+  source ~/dotfiles/manjaroSetup/preScript.sh
+fi
+
+if [[ $do_symlinks == y* ]]; then
+  if [ ! -d ~/dotfiles ]; then
 		mkdir ~/dotfiles
 		mkdir ~/defaultBackups
-		git clone https://github.com/janis-schanbacher/dotfiles.git ~/dotfiles
+		git clone git@github.com:janis-schanbacher/dotfiles.git ~/dotfiles
+  else
+    git remote set-url origin git@github.com:janis-schanbacher/dotfiles.git
+  fi
 
-		echo 'Creating symlinks:'
+  echo 'Creating symlinks:'
 
-		mv ~/.bashrc ~/.bashrc_bkp
-    rm ~/.bashrc
-		ln -s ~/dotfiles/bash/.bashrc ~
-		source ~/.bashrc
-		echo '.bashrc done'
-		# ln -s ~/dotfiles/bash/.bash_aliases ~
-		# echo '.bash_aliases done'
-		# ln -s ~/dotfiles/bash/.bash_machine ~
-    # echo '.bash_machine done'
+  mv ~/.bashrc ~/.bashrc_bkp
+  rm ~/.bashrc
+  ln -s ~/dotfiles/bash/.bashrc ~
+  source ~/.bashrc
+  echo '.bashrc done'
+  # ln -s ~/dotfiles/bash/.bash_aliases ~
+  # echo '.bash_aliases done'
+  # ln -s ~/dotfiles/bash/.bash_machine ~
+  # echo '.bash_machine done'
 
-		# ln -s ~/Dotfiles/bash/.git-completion.bash ~
-		# echo '.git-completion.bash done'
+  ln -s ~/dotfiles/bash/.git-completion.bash ~
+  echo '.git-completion.bash done'
 
-		# ln -s ~/Dotfiles/kitty/kitty.conf ~/.config/kitty/
-		# echo '.kitty done'
+  # ln -s ~/Dotfiles/kitty/kitty.conf ~/.config/kitty/
+  # echo '.kitty done'
 
-		ln -s ~/dotfiles/vim/.vimrc ~
-		echo '.vimrc done'
+  ln -s ~/dotfiles/vim/.vimrc ~
+  echo '.vimrc done'
 
-		#ln -s ~/Dotfiles/vim/coc-settings.json ~/.vim/coc-settings.json
-		#echo 'coc-settings.json done'
+  #ln -s ~/Dotfiles/vim/coc-settings.json ~/.vim/coc-settings.json
+  #echo 'coc-settings.json done'
 
-		#ln -s ~/Dotfiles/alsa/.asoundrc ~
-		#echo '.asoundrc done'
+  #ln -s ~/Dotfiles/alsa/.asoundrc ~
+  #echo '.asoundrc done'
 
-		#mv ~/.Xresources ~/defaultBackups
-		#ln -s ~/Dotfiles/Xresources/.Xresources ~
-		#echo '.Xresources done'
+  #mv ~/.Xresources ~/defaultBackups
+  #ln -s ~/Dotfiles/Xresources/.Xresources ~
+  #echo '.Xresources done'
 
-		#mkdir ~/.config/polybar
-		#ln -s ~/Dotfiles/polybar/config ~/.config/polybar
-		#echo 'polybar config done'
+  #mkdir ~/.config/polybar
+  #ln -s ~/Dotfiles/polybar/config ~/.config/polybar
+  #echo 'polybar config done'
 
-	  mv ~/.i3/config ~/defaultBackups/config_i3
-		ln -s ~/dotfiles/i3config/i3.config ~/.i3/config
-		echo 'i3 config done'
+  mv ~/.i3/config ~/defaultBackups/config_i3
+  ln -s ~/dotfiles/i3config/i3.config ~/.i3/config
+  echo 'i3 config done'
 
-		# mv ~/.config/ranger/rc.conf ~/defaultBackups/rc.conf
-		# ln -s ~/Dotfiles/ranger/rc.conf
-		# echo 'ranger config done'
+  # mv ~/.config/ranger/rc.conf ~/defaultBackups/rc.conf
+  # ln -s ~/Dotfiles/ranger/rc.conf
+  # echo 'ranger config done'
 
-		# ln -s ~/Dotfiles/git/.gitconfig ~/.gitconfig
-		# cp ~/Dotfiles/git/user.gitconfig.example ~/Dotfiles/git/user.gitconfig
-		# ln -s ~/Dotfiles/git/user.gitconfig ~/user.gitconfig
-		# echo 'git config done'
+  ln -s ~/dotfiles/git/.gitconfig ~/.gitconfig
+  echo 'git config done'
 
-		mv ~/.profile ~/defaultBackups/.profile
-		ln -s ~/dotfiles/profile/.profile ~/.profile
-		echo 'profile done'
+  mv ~/.profile ~/defaultBackups/.profile
+  ln -s ~/dotfiles/profile/.profile ~/.profile
+  echo 'profile done'
 
-		sudo ln -s ~/dotfiles/i3config/create_i3_config.sh /usr/local/bin/create_i3_config
-		echo 'create_i3_config done'
-		sudo chmod a+x /usr/local/bin/create_i3_config
-		echo 'chmod a+x has been applied'
-	fi
+  sudo ln -s ~/dotfiles/i3config/create_i3_config.sh /usr/local/bin/create_i3_config
+  echo 'create_i3_config done'
+  sudo chmod a+x /usr/local/bin/create_i3_config
+  echo 'chmod a+x has been applied'
 fi
 
 if [ ! -d ~/Pictures/Screenshots ]; then

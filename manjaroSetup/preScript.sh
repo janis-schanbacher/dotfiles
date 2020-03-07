@@ -9,21 +9,26 @@ echo "#         PreScript          #"
 echo '#                            #'
 echo '##############################'
 
+echo 'Enter git username'
+read username
+echo 'Enter git email'
+read email
+echo 'Enter git name'
+read name
+echo "[user]" > ~/dotfiles/git/user.gitconfig
+echo "  username = $username" >> ~/dotfiles/git/user.gitconfig
+echo "  email = $email" >> ~/dotfiles/git/user.gitconfig
+echo "  name = $name" >> ~/dotfiles/git/user.gitconfig
+# echo 'Setting git global credentials:'
+# git config --global user.email "$email"
+# git config --global user.name "$name"
+# echo 'Done.'
+
 sudo pacman-db-upgrade && sync
 sudo pacman -Syu
 
 echo 'xclip required. Downloading now.'
 sudo pacman -S xclip
-
-echo 'Enter E-Mail adress'
-read email
-echo 'Enter user.name'
-read name
-
-echo 'Setting git global credentials:'
-git config --global user.email "$email"
-git config --global user.name "$name"
-echo 'Done.'
 
 echo 'Creating SSH-Key'
 ssh-keygen -t rsa -b 4096 -C "$email"

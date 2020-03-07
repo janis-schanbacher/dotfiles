@@ -1,0 +1,25 @@
+[include]
+  path = ~/dotfiles/git/user.gitconfig # credentials
+
+[alias]
+  A = add -A
+  c = commit -v
+  cnv = commit -v --no-verify
+  cc = checkout -- .
+  d = diff
+  l = log
+  ps = push origin HEAD
+  s = status
+  us = reset HEAD # unstage everything
+
+[core]
+  pager = diff-so-fancy | less --tabs=2 -RFX
+
+[color]
+  ui = always
+
+[color "diff-highlight"]
+  oldNormal = red bold
+  oldHighlight = red bold 52
+  newNormal = green bold
+  newHighlight = green bold 22
