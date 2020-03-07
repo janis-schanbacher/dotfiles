@@ -1,0 +1,4 @@
+https://help.github.com/articles/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent/
+
+If vim runitme is wrong (because no version was set in manjaroSetup):
+export VIMRUNTIME=/usr/share/vim/vim82

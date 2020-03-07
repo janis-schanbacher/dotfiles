@@ -56,7 +56,7 @@ echo ''
 echo 'Install nodejs, npm, ruby etc.?'
 read do_dev_software
 
-echo 'Get Vimium for Google Chrome?'
+echo 'Get Vimium for Chromium and Firefox?'
 read do_vimium
 
 echo 'All clear!'
@@ -208,7 +208,7 @@ if [[ $do_software == y* ]]; then
   # sudo pacman -S --noconfirm flameshot
   # sudo pacman -S --noconfirm cowsay
   # sudo pacman -S --noconfirm fortune-mod
-  # sudo pacman -S --noconfirm xclip
+  sudo pacman -S --noconfirm xclip
   # sudo pacman -S --noconfirm clementine
   # sudo pacman -S --noconfirm gthumb
   sudo pacman -S --noconfirm filezilla
@@ -234,6 +234,9 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm firefox
   sudo pacman -S --noconfirm chromium
   sudo pacman -S --noconfirm albert
+  sudo pacman -S --noconfirm steam
+  sudo pacman -S --noconfirm gimp
+  sudo pacman -S --noconfirm viewnior # image viewer
   # yay -S --noconfirm xcursor-dmz
   # yay -S --noconfirm google-chrome
   yay -S --noconfirm spotify

@@ -1,0 +1,6 @@
+add vim to ignored packages:
+sudo vim /etc/pacman.conf
+IgnorePkg   = vim-runtime
+
+
+
