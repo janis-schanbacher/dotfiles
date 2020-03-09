@@ -8,6 +8,7 @@ IgnorePkg   = vim-runtime
   Open nitrogen, choose directory: /usr/share/backgrounds
   sudo pacman -S i3
   source ~/dotfiles/i3config/create_i3_config.sh
+  mkdir ~/.config/i3
   ln -s ~/dotfiles/i3config/i3.config ~/.config/i3/config
   yay -S xfce4-i3-workspaces-plugin-git
   Remove all xfce keybindings in settings>Keyboard>shortcuts
@@ -24,8 +25,11 @@ IgnorePkg   = vim-runtime
   Items:
     Whisker Menu
     Weather Update
+      - set sity
+      - remove wind direction, wind speed
     Separator
     System Load Monitor
+      - disable swap monitor, uptime monitor
     Disk Performance Monitor
     Sensor Plugin
     Separator
@@ -35,6 +39,5 @@ IgnorePkg   = vim-runtime
     Notification Area
     PulseAudio Plugin
     Clock
-    Separator
     Action Buttons
 

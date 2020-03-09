@@ -184,15 +184,17 @@ if [ ~/temp ]; then
 		make VIMRUNTIMEDIR=/usr/share/vim/vim$vim_version
 		sudo make install
 		sudo pacman -S --noconfirm vim-plug
-    vim +PluginInstall +qall
+    vim +PlugInstall +qall
+    cd ~
 	fi
 
 	if [[ $do_yay == y* ]]; then
-		cd ~/temp
-		git clone https://aur.archlinux.org/yay.git
-		cd yay
-		makepkg -si
-		cd ~
+		# cd ~/temp
+		# git clone https://aur.archlinux.org/yay.git
+		# cd yay
+		# makepkg -si
+		# cd ~
+		sudo pacman -S --noconfirm yay
 	fi
 
 	# if [[ $do_nitroshare == y* ]]; then
@@ -244,8 +246,15 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm chromium
   sudo pacman -S --noconfirm albert
   sudo pacman -S --noconfirm steam
+  sudo pacman -S --noconfirm playonlinux
   sudo pacman -S --noconfirm gimp
+  sudo pacman -S --noconfirm inkscape
   sudo pacman -S --noconfirm viewnior # image viewer
+  sudo pacman -S --noconfirm pdfmod
+  sudo pacman -S --noconfirm rhythmbox
+  sudo pacman -R --noconfirm hexchat
+  sudo pacman -R --noconfirm pidgin
+
   # yay -S --noconfirm xcursor-dmz
   # yay -S --noconfirm google-chrome
   yay -S --noconfirm spotify
