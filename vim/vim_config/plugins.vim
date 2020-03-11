@@ -20,6 +20,10 @@ Plug 'styled-components/vim-styled-components'
 Plug 'dense-analysis/ale'
 
 Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 

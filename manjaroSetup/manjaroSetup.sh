@@ -245,8 +245,6 @@ if [[ $do_software == y* ]]; then
   sudo pacman -S --noconfirm firefox
   sudo pacman -S --noconfirm chromium
   sudo pacman -S --noconfirm albert
-  sudo pacman -S --noconfirm steam
-  sudo pacman -S --noconfirm playonlinux
   sudo pacman -S --noconfirm gimp
   sudo pacman -S --noconfirm inkscape
   sudo pacman -S --noconfirm viewnior # image viewer
@@ -260,7 +258,6 @@ if [[ $do_software == y* ]]; then
   yay -S --noconfirm spotify
   # yay -S --noconfirm light-git
   # yay -S --noconfirm slack-desktop
-  yay -S --noconfirm jmtpfs
   yay -S --noconfirm gucharmap
   yay -S --noconfirm xmeasure
 
