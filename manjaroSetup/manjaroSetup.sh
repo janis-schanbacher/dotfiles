@@ -81,11 +81,12 @@ if [[ $do_symlinks == y* ]]; then
 
   echo 'Creating symlinks:'
 
-  mv ~/.bashrc ~/.bashrc_bkp
-  rm ~/.bashrc
+  mv ~/.bashrc ~/defaultBackups/.bashrc
   ln -s ~/dotfiles/bash/.bashrc ~
   source ~/.bashrc
   echo '.bashrc done'
+  mv ~/.bash_profile ~/defaultBackups/.bash_profile
+  ln -s ~/dotfiles/bash/.bash_profile ~
   # ln -s ~/dotfiles/bash/.bash_aliases ~
   # echo '.bash_aliases done'
   # ln -s ~/dotfiles/bash/.bash_machine ~
@@ -94,8 +95,8 @@ if [[ $do_symlinks == y* ]]; then
   ln -s ~/dotfiles/bash/.git-completion.bash ~
   echo '.git-completion.bash done'
 
-  # ln -s ~/Dotfiles/kitty/kitty.conf ~/.config/kitty/
-  # echo '.kitty done'
+  ln -s ~/dotfiles/kitty/kitty.conf ~/.config/kitty/
+  echo '.kitty done'
 
   ln -s ~/dotfiles/vim/.vimrc ~
   echo '.vimrc done'
@@ -208,10 +209,11 @@ if [ ~/temp ]; then
 fi
 
 if [[ $do_software == y* ]]; then
+  sudo pacman -S --noconfirm keychain
   sudo pacman -S --noconfirm ranger
   # sudo pacman -S --noconfirm rofi
   # sudo pacman -S --noconfirm manjaro-settings-manager
-  # sudo pacman -S --noconfirm kitty
+  sudo pacman -S --noconfirm kitty
   # sudo pacman -S --noconfirm pulseaudio
   # sudo pacman -S --noconfirm neofetch
   # sudo pacman -S --noconfirm feh
