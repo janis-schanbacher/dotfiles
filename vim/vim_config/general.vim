@@ -2,7 +2,8 @@
 
 syntax on
 set encoding=utf-8
-set number relativenumber
+" set number relativenumber
+set number
 set shell=bash
 set mouse=a
 set clipboard=unnamedplus

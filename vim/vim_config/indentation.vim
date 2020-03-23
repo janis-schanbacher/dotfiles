@@ -6,4 +6,6 @@
   imap <C-Return> <CR><CR><C-o>k<Tab>
 
 " Set TAB to consist of 2 spaces
-	set tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
+"	set tabstop=2 softtabstop=2 expandtab shiftwidth=2 smarttab
+" explicitly use default tab settings
+set softtabstop=0 noexpandtab
