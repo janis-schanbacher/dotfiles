@@ -49,6 +49,8 @@ function parse_git_dirty {
 
 export PS1="\[\e[36m\]\w\[\e[m\] \[\e[33m\]\`parse_git_branch\`\[\e[m\] \[\e[31m\]\\$\[\e[m\] "
 
+source /usr/share/nvm/init-nvm.sh
+# rvm related stuff below probably not needed
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
@@ -89,10 +91,11 @@ alias nginxStatus='ps auxw | grep nginx && sudo passenger-memory-stats'
 alias elasticsearch='/home/janis/perm/elasticsearch-2.4.6/bin/elasticsearch'
 
 
-alias mp='cd ~/Projects/moviepilot.de'
-alias mn='cd ~/Projects/moviepilot-next'
+alias mp='cd ~/projects/moviepilot.de'
+alias mn='cd ~/projects/moviepilot-next'
 
 alias ll='ls -la'
+alias uni='cd ~/uni_ss20'
 
 # Needs to be run several times some times
 function bootMP {
@@ -118,4 +121,15 @@ function bootNext {
 #  fi
 #}
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# alias glg='git log --date-order --all --graph --format="%C(green)%h%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
+# alias glg2='git log --date-order --all --graph --name-status --format="%C(green)%H%Creset %C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset%s"'
+
+# When the shell exits, append to the history file instead of overwriting it
+shopt -s histappend
+# Unlimited bash history
+HISTSIZE=-1
+HISTFILESIZE=-1
+# After each command, append to the history file and reread it
+PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+
+[-f ~/.fzf.bash ] && source ~/.fzf.bash
