@@ -135,3 +135,6 @@ PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; h
 export FZF_DEFAULT_COMMAND='ag -g ""'
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+# Installation directory of tomcat
+export CATALINA_HOME=/usr/share/tomcat9
+
