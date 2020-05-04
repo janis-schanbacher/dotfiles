@@ -5,6 +5,7 @@
   A = add -A
   c = commit -v
   cnv = commit -v --no-verify
+  co = checkout
   cc = checkout -- .
   d = diff
   l = log
