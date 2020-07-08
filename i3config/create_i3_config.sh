@@ -9,6 +9,7 @@ srcfiles=(
 # header
 set-modkey
 # focus_wrapping
+floating
 font
 i3-gaps
 i3-colors
