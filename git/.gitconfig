@@ -4,12 +4,14 @@
 [alias]
   A = add -A
   c = commit -v
+  ca = commit -v --amend
   cnv = commit -v --no-verify
   co = checkout
   cc = checkout -- .
   d = diff
   l = log
   ps = push origin HEAD
+  pl = pull origin HEAD
   s = status
   us = reset HEAD # unstage everything
 
