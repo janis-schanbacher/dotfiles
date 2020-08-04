@@ -246,6 +246,10 @@ if [[ $do_dev_software == y* ]]; then
   sudo apt install --assume-yes ctags
   sudo apt install --assume-yes ruby
 #  sudo apt install --assume-yes lua51
+  sudo snap install intellij-idea-ultimate --classic
+  sudo apt install --assume-yes maven
+  sudo snap install postman
+  sudo apt install --assume-yes net-tools
 fi
 
 if [[ $do_vimium == y* ]]; then

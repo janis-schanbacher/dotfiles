@@ -1,4 +1,4 @@
-ear
+clear
 echo '##############################'
 echo '#                            #'
 echo "#   Janis's Manjaro Setup    #"

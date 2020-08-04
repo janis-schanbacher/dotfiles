@@ -1,3 +1,4 @@
+export EDITOR=vim
 
 ## Set prompt to display path to current directory and git branch
 # get current branch in git repo
