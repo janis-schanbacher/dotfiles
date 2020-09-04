@@ -250,6 +250,11 @@ if [[ $do_dev_software == y* ]]; then
   sudo apt install --assume-yes maven
   sudo snap install postman
   sudo apt install --assume-yes net-tools
+  sudo apt install --assume-yes python3-pip
+  curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+  echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
+  sudo apt update && sudo apt install yarn
+  sudo snap install --classic heroku
 fi
 
 if [[ $do_vimium == y* ]]; then

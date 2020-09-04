@@ -9,6 +9,9 @@ echo "#         PreScript          #"
 echo '#                            #'
 echo '##############################'
 
+
+sudo apt install --assume-yes git
+
 echo 'Enter git username'
 read username
 echo 'Enter git email'
